@@ -1,14 +1,25 @@
 body{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    padding:30px;
+    gap: 20px;
+    align-items: center;
 }
 #container{
+    border:7px solid black;
+    width: 900px;
+    height: 900px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+
+}
+.column{
+    flex: 1 1 auto;
 }
 .gridElement{
-    border:1px solid black;
+    border:auto solid black;
 }
 .row{
 
