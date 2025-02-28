@@ -16,13 +16,12 @@ function draw(gridNum){
         for (let j = 1; j <= gridNum; j++){
             const div = document.createElement("div");
             div.style.paddingBottom = "100%" ;;
+            div.style.opacity = "0";
             div.classList.add("gridElement");
             row.appendChild(div);
             div.addEventListener("mouseover",  function (e){
                 e.target.style.backgroundColor = getRandomColor();
-            });
-            div.addEventListener("mouseout",  function (e){
-                e.target.style.background = "white";
+                e.target.style.opacity = (String(Number(e.target.style.opacity.replace( "%", "")) + .1));
             });
         }
     });
@@ -41,19 +40,8 @@ function reprintGrid(){
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
-    for (var i = 0; i < 6; i++) {
+    for (var c = 0; c < 6; c++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
   }
-/** 
-for (let c = 1; c <= 4; i++){
-
-    for (let r = 1; r <= 4; i++){
-        const div = document.createElement("div");
-        div.style.padding = "50px";
-        div.classList.add(String("div"));
-        eval().appendChild(div);
-    }
-}
-*/
