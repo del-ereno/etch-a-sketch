@@ -1,9 +1,15 @@
-#container{
+body{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-div{
-    background-color: black;
-    border: 2px solid red;
+#container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gridElement{
+    border:1px solid black;
+}
+.row{
+
 }
