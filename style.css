@@ -1,0 +1,9 @@
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div{
+    background-color: black;
+    border: 2px solid red;
+}
