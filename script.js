@@ -19,7 +19,7 @@ function draw(gridNum){
             div.classList.add("gridElement");
             row.appendChild(div);
             div.addEventListener("mouseover",  function (e){
-                e.target.style.background = "blue";
+                e.target.style.backgroundColor = getRandomColor();
             });
             div.addEventListener("mouseout",  function (e){
                 e.target.style.background = "white";
@@ -27,7 +27,6 @@ function draw(gridNum){
         }
     });
 }
-
 const btn = document.querySelector("#changeGrid");
 btn.addEventListener("click", reprintGrid);
 
@@ -39,7 +38,14 @@ function reprintGrid(){
     draw(gridNum);
 }
 
-
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 /** 
 for (let c = 1; c <= 4; i++){
 
