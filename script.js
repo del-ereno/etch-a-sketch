@@ -8,10 +8,20 @@ columns.forEach((column) => {
         div.style.padding = "50px";
         div.classList.add("gridElement");
         row.appendChild(div);
+        div.addEventListener("mouseover",  function (e){
+            e.target.style.background = "blue";
+        });
+        div.addEventListener("mouseout",  function (e){
+            e.target.style.background = "white";
+        });
     }
 });
 
 
+function myScript(){
+    div.style.backgroundColor = "blue";
+    console.log("hye");
+}
 /** 
 for (let c = 1; c <= 4; i++){
 
