@@ -1,6 +1,6 @@
 container = document.querySelector("#container");
 
-draw(102);
+draw(16);
 
 function draw(gridNum){
     var columns =[];
@@ -25,23 +25,26 @@ function draw(gridNum){
             });
         }
     });
+
 }
 const btn = document.querySelector("#changeGrid");
 btn.addEventListener("click", reprintGrid);
 
 function reprintGrid(){
-    var gridNum = prompt("How many rows/columns would you like your new grid to have?");
-    while(container.firstChild){
-        container.removeChild(container.firstChild);
+    var gridNum = prompt("How many rows/columns would you like your new grid to have? (100 maximum)");
+    if (gridNum <= 100 && gridNum > 0){
+        while(container.firstChild){
+            container.removeChild(container.firstChild);
+        }
+        draw(gridNum);
     }
-    draw(gridNum);
 }
 
 function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
+    let letters = '0123456789ABCDEF';
+    let color = '#';
     for (var c = 0; c < 6; c++) {
-      color += letters[Math.floor(Math.random() * 16)];
+        color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
   }
